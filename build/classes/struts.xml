@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+    <struts>
+		<package name="struts" extends="struts-default">
+			<action name="append" class="Actions.Append">
+				<result>/word_page.jsp</result>
+				<result name="error">/append_page.jsp</result>
+			</action>
+			<action name="delete" class="Actions.Delete">
+				<result>/delete_page.jsp</result>
+			</action>
+			<action name="update" class="Actions.Update">
+				<result>/word_page.jsp</result>
+				<result name="error">/update_page.jsp</result>
+			</action>
+			<action name="upload" class="Actions.Upload">
+				<result>/wordList_page.jsp</result>
+			</action>
+			<action name="download" class="Actions.Download">
+				<result type="stream">
+					<param name="contentDisposition">attachment;filename=${fileName}</param>
+					<param name="inputName">is</param>
+				</result>
+			</action>
+				<action name="findENbyCH" class="Actions.FindENbyCH">
+				<result>/word_page.jsp</result>
+			</action>
+		</package>
+    </struts>
